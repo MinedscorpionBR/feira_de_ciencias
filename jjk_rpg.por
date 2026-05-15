@@ -13,6 +13,7 @@ programa
         cadeia expansao
         cadeia reversao
         cadeia resultado = ""
+        cadeia cla
         inteiro escolhas
 
         inteiro forca = 1
@@ -27,6 +28,7 @@ programa
         inteiro tecnicaRoubada
         inteiro quantidadeItens
         inteiro poderTotal
+        inteiro sortecla
 
 
       inteiro sorteTipo = u.sorteia(1,4)
@@ -2294,6 +2296,21 @@ senao {
 
              bonusFinal -= 150
             resistencia -= 20
+        }
+        se (forca < 0 ){
+          forca = 0
+        }
+        senao se (velocidade < 0 ){
+          velocidade = 0
+        }
+        senao se (resistencia < 0 ){
+          resistencia = 0
+        }
+        senao se (jujutsu < 0 ){
+          jujutsu = 0
+        }
+         senao se (energia < 0 ){
+          energia = 0
         }
                 poderTotal = forca +
                      velocidade +
