@@ -14,6 +14,7 @@ programa
         cadeia reversao
         cadeia resultado = ""
         cadeia cla
+        cadeia dominiosimples
         inteiro escolhas
 
         inteiro forca = 1
@@ -29,6 +30,27 @@ programa
         inteiro quantidadeItens
         inteiro poderTotal
         inteiro sortecla
+
+        sortecla = u.sorteia(1,4)
+        
+        escolha(sortecla)
+        {
+              caso 1: 
+            cla = "Zenin"
+            pare
+              caso 2: 
+            cla = "Kamo"
+            pare
+              caso 3: 
+            cla = "Gojo"
+            pare
+              caso 4: 
+            cla = "Inumaki"
+            pare
+              caso 5: 
+            cla = "Shinkage"
+            pare
+        }
 
 
       inteiro sorteTipo = u.sorteia(1,4)
@@ -2269,14 +2291,14 @@ senao {
             expansao = "Sim"
 
             bonusFinal += 250
-            jujutsu += 30
+            jujutsu += 300
         }
         senao
         {
             expansao = "Não"
 
             bonusFinal -= 250
-            jujutsu -= 30
+            jujutsu -= 300
         }
 
         // REVERSÃO
@@ -2287,7 +2309,7 @@ senao {
             reversao = "Sim"
 
             bonusFinal += 150
-            resistencia += 20
+            resistencia += 200
             gastoEnergia = gastoEnergia * 2
         }
         senao
@@ -2295,7 +2317,24 @@ senao {
             reversao = "Não"
 
              bonusFinal -= 150
-            resistencia -= 20
+            resistencia -= 200
+        }
+        // Dominio simples
+        inteiro sorteDominio = u.sorteia(1,2)
+
+        se(sorteDominio == 1)
+        {
+            dominiosimples = "Sim"
+
+            bonusFinal += 150
+            jujutsu +=200
+        }
+        senao
+        {
+            dominiosimples = "Não"
+
+             bonusFinal -= 150
+             jujutsu -=200
         }
         se (forca < 0 ){
           forca = 0
@@ -2480,6 +2519,14 @@ senao {
                 senao {
                    resultado = "perdeu"
                 }
+                 caso 18:
+                inimigo = "Kajime"
+                 se (poderTotal >= 9000){
+                 resultado = "ganhou"
+                }
+                senao {
+                   resultado = "perdeu"
+                }
         }
 
         // RESULTADO
@@ -2492,6 +2539,7 @@ senao {
 
         escreva("Expansão de Domínio: ", expansao, "\n")
         escreva("Reversão de Feitiço: ", reversao, "\n")
+        escreva("Dominio simples: ", dominiosimples, "\n")
 
         escreva("Energia Amaldiçoada: ", energia, "\n")
         escreva("Gasto de Energia: ", gastoEnergia, "%\n")
@@ -2513,6 +2561,7 @@ senao {
          escreva("\nContra ele, você: ", resultado, "\n")
 
         escreva("\nSeu poder total é: ", poderTotal, "\n")
+
 
         se(poderTotal >= 9000)
         {
