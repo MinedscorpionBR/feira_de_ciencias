@@ -99,6 +99,7 @@ se (tipo == "Maldição") {
 
     escreva("Você entrou automaticamente no time Maldições!\n")
     escreva("O plano é selar Gojo e libertar Sukuna em 31 de outubro.\n")
+    jujutsu +=2000
 
 }
 
@@ -112,8 +113,13 @@ senao {
 
     se (escolhas == 1) {
 
-        escreva("Você entrou no time maldições!\n")
+        escreva("Você entrou no time maldições/Mestre de maldições!\n")
         escreva("O plano é selar Gojo e libertar Sukuna em 31 de outubro.\n")
+        tipo = "Mestre de Maldição"
+         forca += 400
+            velocidade += 400
+            resistencia += 400
+            jujutsu += 400
 
     }
 
@@ -127,7 +133,7 @@ senao {
 
         se (escola == 3) {
 
-            escreva("\nVocê entrou na escola de Tokyo, boa escolha 🔥\n")
+            escreva("\nVocê entrou na escola de Tokyo, boa escolha,Feiticeiro 🔥\n")
 
             forca += 500
             velocidade += 500
@@ -138,7 +144,7 @@ senao {
 
         senao se (escola == 4) {
 
-            escreva("\nVocê entrou na escola de Kyoto, péssima escolha ☠️\n")
+            escreva("\nVocê entrou na escola de Kyoto, péssima escolha,Feiticeiro ☠️\n")
 
             forca -= 500
             velocidade -= 500
@@ -2210,7 +2216,7 @@ senao {
         }
 
 
-        quantidadeItens = u.sorteia(1,12)
+        quantidadeItens = u.sorteia(1,5)
        para(i = 1; i <= quantidadeItens; i++)
 {
         inteiro sorteItem = u.sorteia(1,13)
@@ -2371,6 +2377,8 @@ senao {
                 }
                 senao {
                   resultado = "perdeu"
+                  tipo = "humano transfigurado"
+                  escreva("você foi transfigurado e morreu")
                 }
                 pare
 
@@ -2551,21 +2559,27 @@ senao se (sorteioReencarnacao == 9)
 
                 forca += 400
                 resistencia += 400
+                expansao = "Sim"
+                reversao = "Sim"
     }
      senao se (quantidadeDedos >= 5 ou quantidadeDedos <= 14 ) {
         bonusFinal += 6000 
            tecnica += "Santuario"
 
-                forca += 400
-                resistencia += 400
+                forca += 200
+                resistencia += 200
+               expansao = "Sim"
+                reversao = "Sim"
      }
 
         senao {
           bonusFinal += 3000 
              tecnica += "Santuario"
 
-                forca += 400
-                resistencia += 400
+                forca += 100
+                resistencia += 100
+                expansao = "Sim"
+                reversao = "Sim"
     }
 }
 senao se (sorteioReencarnacao == 10) 
@@ -2586,6 +2600,7 @@ senao se (sorteioReencarnacao == 10)
                 tecnica = "Manipulação de gelo"
                 jujutsu += 800
         bonusFinal += 6000
+                reversao = "Sim"
     }
     senao se (nivelFeiticeiroAntigo == 3) {
      reencancaofeiticeiro += "Hajime Kashimo"
@@ -2609,6 +2624,7 @@ senao se (sorteioReencarnacao == 10)
       resistencia -= 500
       velocidade += 100
       bonusFinal += 9000
+                reversao = "Sim"
     }
         senao se (nivelFeiticeiroAntigo == 7) {
       reencancaofeiticeiro = "Anjo"
@@ -2652,19 +2668,8 @@ senao se (sorteioReencarnacao == 10)
 
         escreva("\nSeu poder total é: ", poderTotal, "\n")
         
-        se(poderTotal >= 9000)
-
-{
-
-escreva("grau especiau 💀\n")
-
-}
-
-senao se(poderTotal >= 7000)
-
-{
-
-escreva("é de nivel semi especial 😈\n")
+se(poderTotal >= 9000){
+escreva("Maldição grau especiau 💀\n")
 
 }
 
@@ -2672,7 +2677,7 @@ senao se(poderTotal >= 6000)
 
 {
 
-escreva("Você é Grau um 🔥\n")
+escreva("é de nivel semi especial 😈\n")
 
 }
 
@@ -2680,7 +2685,7 @@ senao se(poderTotal >= 5000)
 
 {
 
-escreva("Você é de semi primeiro nivel ⚔️\n")
+escreva("Você é Grau um 🔥\n")
 
 }
 
@@ -2688,11 +2693,19 @@ senao se(poderTotal >= 4000)
 
 {
 
-escreva("Você é grau 2 ⚔️\n")
+escreva("Você é de semi primeiro nivel ⚔️\n")
 
 }
 
 senao se(poderTotal >= 3000)
+
+{
+
+escreva("Você é grau 2 ⚔️\n")
+
+}
+
+senao se(poderTotal >= 1000)
 
 {
 
