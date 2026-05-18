@@ -31,6 +31,7 @@ programa
         inteiro quantidadeItens
         inteiro poderTotal
         inteiro sortecla
+        inteiro tecnicaHereditaria
 
         sortecla = u.sorteia(1,4)
         
@@ -38,18 +39,102 @@ programa
         {
               caso 1: 
             cla = "Zenin"
+              tecnicaHereditaria = u. sorteia(1, 10)
+
+              escolha(tecnicaHereditaria)
+              {
+               caso 1:
+                tecnica = "10 Sombras"
+                jujutsu += 200
+                resistencia -= 100
+                pare
+               caso 2:
+                tecnica = "Tecnica da proporção"
+                forca += 500
+                pare
+                caso 3:
+                pare
+                 caso 4:
+                pare
+                 caso 5:
+                pare
+              }
             pare
               caso 2: 
             cla = "Kamo"
+                          tecnicaHereditaria = u. sorteia(1, 5)
+                            escolha(tecnicaHereditaria)
+              {
+                             caso 1:
+                tecnica = "Manipulação de Sangue"
+                resistencia += 150
+                pare
+               caso 2:
+                pare
+                caso 3:
+                pare
+                 caso 4:
+                pare
+                 caso 5:
+                pare
+        }
             pare
               caso 3: 
             cla = "Gojo"
+              tecnicaHereditaria = u. sorteia(1, 5)
+                            escolha(tecnicaHereditaria)
+              {
+                             caso 1:
+                tecnica = "Ilimitado"
+                jujutsu += 300
+                gastoEnergia = gastoEnergia * 100
+                pare
+               caso 2:
+                pare
+                caso 3:
+                pare
+                 caso 4:
+                pare
+                 caso 5:
+                pare
+        }
             pare
               caso 4: 
             cla = "Inumaki"
+                          tecnicaHereditaria = u. sorteia(1, 5)
+                            escolha(tecnicaHereditaria)
+              {
+                             caso 1:
+                tecnica = "Fala Amaldiçoada"
+                jujutsu += 150
+                pare
+               caso 2:
+                pare
+                caso 3:
+                pare
+                 caso 4:
+                pare
+                 caso 5:
+                pare
+        }
             pare
               caso 5: 
             cla = "Shinkage"
+            pare
+            caso 6: 
+            cla = "Nenhum"
+            pare
+                        caso 7: 
+            cla = "Nenhum"
+            pare
+                        caso 8: 
+            cla = "Nenhum"
+            pare
+                        caso 9: 
+            cla = "Nenhum"
+            pare
+                        caso 10: 
+            cla = "Nenhum"
             pare
         }
 
@@ -68,8 +153,6 @@ programa
 
             caso 2:
                 tipo = "Maldição"
-
-                escolhas == 1
 
                 jujutsu += 2000
                 forca -= 100
@@ -1213,7 +1296,7 @@ senao {
                 tecnica = "Transplante de cerebro"
                 jujutsu += 1000
 
-                quantidadeTecnicas = u.sorteia(0,44)
+                quantidadetecnicas = u.sorteia(0,44)
 
                escreva("\nKVocê andou por ", quantidadetecnicas, " corpos! você terá as tecnicas deles\n")
 
@@ -2216,10 +2299,10 @@ senao {
         }
 
 
-        quantidadeItens = u.sorteia(1,5)
+        quantidadeItens = u.sorteia(1,12)
        para(i = 1; i <= quantidadeItens; i++)
 {
-        inteiro sorteItem = u.sorteia(1,13)
+        inteiro sorteItem = u.sorteia(1,20)
         escolha(sorteItem)
         {
             caso 1:
@@ -2285,6 +2368,24 @@ senao {
                 forca +=500
                 resistencia +=200
                 energia +=500
+                pare
+                            caso 13:
+                item += " Nenhum;"
+                pare
+                            caso 15:
+                item += " Nenhum;"
+                pare
+                            caso 16:
+                item += " Nenhum;"
+                pare
+                            caso 18:
+                item += " Nenhum;"
+                pare
+                             caso 19:
+                item += " Nenhum;"
+                pare
+                             caso 20:
+                item += " Nenhum;"
                 pare
         }
         }
@@ -2379,6 +2480,17 @@ senao {
                   resultado = "perdeu"
                   tipo = "humano transfigurado"
                   escreva("você foi transfigurado e morreu")
+                  forca = 100
+                  velocidade = 0
+                  expansao = "Não"
+                  reversao = "Não"
+                  jujutsu = 0
+                  tecnica = "Nenhuma"
+                  bonusFinal = 0
+                  dominiosimples = "Não"
+                  gastoEnergia = 0
+                  energia = 0
+                  poderTotal = 0
                 }
                 pare
 
@@ -2503,6 +2615,7 @@ senao {
                 senao {
                    resultado = "perdeu"
                 }
+                pare
                   caso 15:
                 inimigo = "Chooso"
                  se (poderTotal >= 9000){
@@ -2511,6 +2624,7 @@ senao {
                 senao {
                    resultado = "perdeu"
                 }
+                pare
                   caso 16:
                 inimigo = "miwa"
                  se (poderTotal >= 4000){
@@ -2519,6 +2633,7 @@ senao {
                 senao {
                   resultado = "perdeu"
                 }
+                pare
                   caso 17:
                 inimigo = "John Kaisen"
                  se (poderTotal >= 5000000000){
@@ -2527,6 +2642,7 @@ senao {
                 senao {
                    resultado = "perdeu"
                 }
+                pare
                  caso 18:
                 inimigo = "Kajime"
                  se (poderTotal >= 9000){
@@ -2535,6 +2651,7 @@ senao {
                 senao {
                    resultado = "perdeu"
                 }
+                pare
         }
 
       inteiro sorteioReencarnacao = u. sorteia(1, 10) 
@@ -2653,6 +2770,7 @@ senao se (sorteioReencarnacao == 10)
         escreva("\n===== ATRIBUTOS =====\n")
 
         escreva("Força: ", forca, "\n")
+        escreva("seu clã é: ", cla, "\n")
         escreva("Velocidade: ", velocidade, "\n")
         escreva("Resistência: ", resistencia, "\n")
         escreva("Jujutsu: ", jujutsu, "\n")
@@ -2668,57 +2786,53 @@ senao se (sorteioReencarnacao == 10)
 
         escreva("\nSeu poder total é: ", poderTotal, "\n")
         
-se(poderTotal >= 9000){
-escreva("Maldição grau especiau 💀\n")
+se (tipo == "Maldicao") {
+      se(poderTotal >= 5000){
+        escreva("Maldição de Grau Especial 💀\n")
+      }
+      senao se(poderTotal >= 4000){
+        escreva("Maldição de Nível Semi-Especial 😈\n")
+      }
+      senao se(poderTotal >= 3000){
+        escreva("Maldição de Grau 1 🔥\n")
+      }
+      senao se(poderTotal >= 2000){
+        escreva("Maldição de Semi-Primeiro Nível ⚔️\n")
+      }
+      senao se(poderTotal >= 1000){
+        escreva("Maldição de Grau 2 ⚔️\n")
+      }
+      senao se(poderTotal >= 500){
+        escreva("Maldição de Grau 3 ⚔️\n")
+      }
+      senao {
+        escreva("Maldição de Grau 4 ☠️\n")
+      }
 
+    } 
+    senao {
+      se(poderTotal >= 9000){
+        escreva("Grau Especial 💀\n")
+      }
+      senao se(poderTotal >= 6000){
+        escreva("É de nível semi especial 😈\n")
+      }
+      senao se(poderTotal >= 5000){
+        escreva("Você é Grau um 🔥\n")
+      }
+      senao se(poderTotal >= 4000){
+        escreva("Você é de semi primeiro nivel ⚔️\n")
+      }
+      senao se(poderTotal >= 3000){
+        escreva("Você é grau 2 ⚔️\n")
+      }
+      senao se(poderTotal >= 1000){
+        escreva("Você é grau 3 ⚔️\n")
+      }
+      senao {
+        escreva("Grau 4 ☠️\n")
+      }
+      
+    }
+  }
 }
-
-senao se(poderTotal >= 6000)
-
-{
-
-escreva("é de nivel semi especial 😈\n")
-
-}
-
-senao se(poderTotal >= 5000)
-
-{
-
-escreva("Você é Grau um 🔥\n")
-
-}
-
-senao se(poderTotal >= 4000)
-
-{
-
-escreva("Você é de semi primeiro nivel ⚔️\n")
-
-}
-
-senao se(poderTotal >= 3000)
-
-{
-
-escreva("Você é grau 2 ⚔️\n")
-
-}
-
-senao se(poderTotal >= 1000)
-
-{
-
-escreva("Você é grau 3 ⚔️\n")
-
-}
-
-senao
-
-{
-
-escreva("Grau 4 ☠️\n")
-
-}
-}
-} 
