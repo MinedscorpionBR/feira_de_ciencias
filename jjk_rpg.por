@@ -1517,7 +1517,7 @@ senao {
                 forca += 500
                 pare
                 caso 29:
-                tecnica = "Mares do desastre"
+                tecnica = "Marés do desastre"
                 jujutsu += 500
                 pare
                 caso 30:
@@ -2418,6 +2418,14 @@ senao {
         }
 
         // REVERSÃO
+        se (tipo == "Maldição"){
+           reversao = "Não"
+
+             bonusFinal -= 150
+            resistencia -= 200
+
+        }
+        senao{
         inteiro sorteReversao = u.sorteia(1,2)
 
         se(sorteReversao == 1)
@@ -2434,6 +2442,7 @@ senao {
 
              bonusFinal -= 150
             resistencia -= 200
+        }
         }
         // Dominio simples
         inteiro sorteDominio = u.sorteia(1,2)
