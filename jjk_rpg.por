@@ -16,6 +16,7 @@ programa
         cadeia cla
         cadeia dominiosimples
         cadeia reencancaofeiticeiro
+        cadeia jaadquirido
         inteiro escolhas
 
         inteiro forca = 1
@@ -47,10 +48,12 @@ programa
                 tecnica = "10 Sombras"
                 jujutsu += 200
                 resistencia -= 100
+                jaadquirido = "sim"
                 pare
                caso 2:
                 tecnica = "Tecnica da proporção"
                 forca += 500
+                jaadquirido = "sim"
                 pare
                 caso 3:
                 pare
@@ -68,6 +71,7 @@ programa
                              caso 1:
                 tecnica = "Manipulação de Sangue"
                 resistencia += 150
+                jaadquirido = "sim"
                 pare
                caso 2:
                 pare
@@ -88,6 +92,7 @@ programa
                 tecnica = "Ilimitado"
                 jujutsu += 300
                 gastoEnergia = gastoEnergia * 100
+                jaadquirido = "sim"
                 pare
                caso 2:
                 pare
@@ -107,6 +112,7 @@ programa
                              caso 1:
                 tecnica = "Fala Amaldiçoada"
                 jujutsu += 150
+                jaadquirido = "sim"
                 pare
                caso 2:
                 pare
@@ -252,6 +258,7 @@ senao {
                 velocidade += 60
                 resistencia += 400
                 gastoEnergia = 0
+               jaadquirido = "sim"
                 pare
 
             caso 2:
@@ -261,6 +268,7 @@ senao {
                 velocidade += 35
                 resistencia += 20
                 gastoEnergia = 0
+               jaadquirido = "sim"
                 pare
 
             caso 3:
@@ -305,7 +313,11 @@ senao {
                 energia = 3000
                 pare
         }
-        
+        se(jaadquirido == "sim"){
+
+        }
+
+        senao {
         inteiro sorteTecnica = u.sorteia(1,44)
 
         escolha(sorteTecnica)
@@ -2294,10 +2306,7 @@ senao {
                 }
             
         }
-            se (nivelEnergia == "Toji" ou nivelEnergia == "Maki sem despertar"){
-          tecnica ="nenhuma"
         }
-
 
         quantidadeItens = u.sorteia(1,12)
        para(i = 1; i <= quantidadeItens; i++)
@@ -2428,7 +2437,14 @@ senao {
         }
         // Dominio simples
         inteiro sorteDominio = u.sorteia(1,2)
+         se (cla == "Shinkage"){
+          dominiosimples = "Sim"
 
+            bonusFinal += 150
+            jujutsu +=200
+
+         }
+         senao{
         se(sorteDominio == 1)
         {
             dominiosimples = "Sim"
@@ -2443,6 +2459,7 @@ senao {
              bonusFinal -= 150
              jujutsu -=200
         }
+         }
         se (forca < 0 ){
           forca = 0
         }
