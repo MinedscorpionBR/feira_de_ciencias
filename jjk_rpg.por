@@ -8,16 +8,17 @@ programa
         cadeia tipo
         cadeia tecnica
         cadeia item
-        cadeia inimigo
         cadeia nivelEnergia
         cadeia expansao
         cadeia reversao
-        cadeia resultado = ""
         cadeia cla
         cadeia dominiosimples
         cadeia reencancaofeiticeiro
         cadeia jaadquirido
         inteiro escolhas
+        cadeia grau
+        inteiro destino
+        inteiro chegadecadeias
 
         inteiro forca = 1
         inteiro velocidade = 1
@@ -189,6 +190,11 @@ se (tipo == "Maldição") {
     escreva("Você entrou automaticamente no time Maldições!\n")
     escreva("O plano é selar Gojo e libertar Sukuna em 31 de outubro.\n")
     jujutsu +=2000
+
+}
+senao se (tipo == "Simuriano") {
+   escreva("Você entrou automaticamente no time Simurianos!\n")
+    escreva("50 mil refugiados de guerra, o plano é ver se podemos entrar na terra de forma pacifica...\n")
 
 }
 
@@ -2492,194 +2498,6 @@ senao {
                      -gastoEnergia +
                      bonusFinal
 
-        // INIMIGO
-        inteiro sorteInimigo = u.sorteia(1,17)
-
-        escolha(sorteInimigo)
-        {
-            caso 1:
-                inimigo = "Mahito"
-                 se (poderTotal >= 5000){
-                 resultado = "ganhou"
-                }
-                senao {
-                  resultado = "perdeu"
-                  tipo = "humano transfigurado"
-                  escreva("você foi transfigurado e morreu")
-                  forca = 100
-                  velocidade = 0
-                  expansao = "Não"
-                  reversao = "Não"
-                  jujutsu = 0
-                  tecnica = "Nenhuma"
-                  bonusFinal = 0
-                  dominiosimples = "Não"
-                  gastoEnergia = 0
-                  energia = 0
-                  poderTotal = 0
-                }
-                pare
-
-            caso 2:
-                inimigo = "Jogo"
-                 se (poderTotal >= 9000){
-                  resultado = "ganhou"
-                }
-                senao {
-                  resultado = "perdeu"
-                }
-                pare
-
-            caso 3:
-                inimigo = "Toji"
-                se (poderTotal >= 9000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-
-            caso 4:
-                inimigo = "Sukuna"
-                se (poderTotal >= 10000){
-                  resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-
-            caso 5:
-                inimigo = "Geto"
-                se (poderTotal >= 9000){
-                  resultado = "ganhou"
-                }
-                senao {
-                 resultado = "perdeu"
-                }
-                pare
-
-            caso 6:
-                inimigo = "Gojo"
-                se (poderTotal >= 10000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-
-            caso 7:
-                inimigo = "Kenjaku"
-                 se (poderTotal >= 9000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-                 caso 8:
-                inimigo = "Yuji prime"
-                 se (poderTotal >= 11000){
-                 resultado = "ganhou"
-                }
-                senao {
-                  resultado = "perdeu"
-                }
-                pare
-                 caso 9:
-                inimigo = "Yuta prime"
-                 se (poderTotal >= 11000){
-                 resultado = "ganhou"
-                }
-                senao {
-                  resultado = "perdeu"
-                }
-                pare
-                 caso 10:
-                inimigo = "Dabura"
-                 se (poderTotal >= 10000){
-                 resultado = "ganhou"
-                }
-                senao {
-                 resultado = "perdeu"
-                }
-                pare
-                 caso 11:
-                inimigo = "Mahoraga"
-                 se (poderTotal >= 10000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-                caso 12:
-                inimigo = "Nanami"
-                 se (poderTotal >= 6000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-                 caso 13:
-                inimigo = "Noritoshi Kamo/Kenjaku"
-                 se (poderTotal >= 5000){
-                resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-                  caso 14:
-                inimigo = "Yuki"
-                 se (poderTotal >= 10000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-                  caso 15:
-                inimigo = "Chooso"
-                 se (poderTotal >= 9000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-                  caso 16:
-                inimigo = "miwa"
-                 se (poderTotal >= 4000){
-                 resultado = "ganhou"
-                }
-                senao {
-                  resultado = "perdeu"
-                }
-                pare
-                  caso 17:
-                inimigo = "John Kaisen"
-                 se (poderTotal >= 5000000000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-                 caso 18:
-                inimigo = "Kajime"
-                 se (poderTotal >= 9000){
-                 resultado = "ganhou"
-                }
-                senao {
-                   resultado = "perdeu"
-                }
-                pare
-        }
-
       inteiro sorteioReencarnacao = u. sorteia(1, 10) 
 
 
@@ -2800,65 +2618,137 @@ senao se (sorteioReencarnacao == 10)
         escreva("Velocidade: ", velocidade, "\n")
         escreva("Resistência: ", resistencia, "\n")
         escreva("Jujutsu: ", jujutsu, "\n")
-
-
-
-
-        escreva("\n===== BATALHA =====\n")
-
-        escreva("Seu inimigo será: ", inimigo, " ⚔️\n")
-
-         escreva("\nContra ele, você: ", resultado, "\n")
-
         escreva("\nSeu poder total é: ", poderTotal, "\n")
         
 se (tipo == "Maldicao") {
       se(poderTotal >= 5000){
         escreva("Maldição de Grau Especial 💀\n")
+        grau = "Grau especial"
       }
       senao se(poderTotal >= 4000){
         escreva("Maldição de Nível Semi-Especial 😈\n")
+        grau = "Grau semi-especial"
       }
       senao se(poderTotal >= 3000){
         escreva("Maldição de Grau 1 🔥\n")
+        grau = "Grau 1"
       }
       senao se(poderTotal >= 2000){
         escreva("Maldição de Semi-Primeiro Nível ⚔️\n")
+        grau = "Semi primeiro nivel"
       }
       senao se(poderTotal >= 1000){
         escreva("Maldição de Grau 2 ⚔️\n")
+        grau = "Grau 2"
       }
       senao se(poderTotal >= 500){
         escreva("Maldição de Grau 3 ⚔️\n")
+        grau = "Grau 3"
       }
       senao {
         escreva("Maldição de Grau 4 ☠️\n")
+        grau = "Grau 4"
       }
 
     } 
     senao {
       se(poderTotal >= 9000){
         escreva("Grau Especial 💀\n")
+        grau = "Grau especial"
       }
       senao se(poderTotal >= 6000){
         escreva("É de nível semi especial 😈\n")
+        grau = "Grau semi-especial"
       }
       senao se(poderTotal >= 5000){
         escreva("Você é Grau um 🔥\n")
+        grau = "Grau 1"
       }
       senao se(poderTotal >= 4000){
         escreva("Você é de semi primeiro nivel ⚔️\n")
+        grau = "semi primeiro nivel"
       }
       senao se(poderTotal >= 3000){
         escreva("Você é grau 2 ⚔️\n")
+        grau = "Grau 2"
       }
       senao se(poderTotal >= 1000){
         escreva("Você é grau 3 ⚔️\n")
+        grau = "Grau 3"
       }
       senao {
         escreva("Grau 4 ☠️\n")
+        grau = "Grau 4"
       }
       
+    }
+
+se (tipo == "Maldição" ou tipo == "Mestre de Maldição") {
+      escreva("você é uma maldição de ", grau, ". \n")
+      escreva("Escolha seu destino\n")
+      escreva("1-Shibuya\n")
+      escreva("2-Tokyo Colônia Nº 1\n")
+      escreva("3-Tokyo Colônia Nº 2\n")
+      escreva("4-Colônia de Sendai\n")
+      escreva("5-Colônia de Sakurajima\n")
+      escreva("6-Colônia Lake Gosho\n")
+      escreva("escolha de 1 a 6 \n")
+      leia(destino)
+
+      se (destino == "1") {
+        escreva("escolha lugar para ir em shibuya\n")
+        escreva("1- metro\n")
+        escreva("2- Estação de Bunkamura\n")
+        escreva("3- Estação de Shibuya,Linha Inokashira\n")
+        escreva("4- Andar sem rumo\n")
+        escreva("escolha de 1 a 4\n")
+        leia(chegadecadeias)
+
+        se (chegadecadeias == "1") {
+          escreva("você encontrou satoru gojo, o feiticeiro mais forte da atualidade\n")
+          
+          se (poderTotal >= 9000) {
+            escreva("você ganhou e derrotou o feiticeiro mais forte\n")
+          } 
+          senao {
+            escreva("você perdeu, porem no ultimo segundo satoru gojo é selado no reino da prisão por kenjaku\n")
+            escreva("dessa vez você deu sorte\n")
+          }
+        } 
+        senao se (chegadecadeias == "2") {
+          escreva("você encontrou naobito, maki e nanami\n")
+         se (poderTotal >= 9000) {
+            escreva("você ganhou e derrotou o feiticeiro mais forte\n")
+          } 
+          senao {
+            escreva("você perdeu, porem no ultimo segundo é salvo por jogo que facilmente derrota cada e vai embora apos sentir a presença de sukuna\n")
+            escreva("dessa vez você deu sorte\n")
+          }
+        } 
+        senao se (chegadecadeias == "3") {
+          escreva("Você foi para a Linha Inokashira e deu de cara com nanami espancando haruta\n")
+           se (poderTotal >= 6000) {
+            escreva("você ganhou e derrotou o nanami\n")
+          } 
+          senao {
+            escreva("você perdeu e foi exorcizado ou morto")
+          }
+        }
+        senao se (chegadecadeias == "4") {
+          escreva("Você andou sem rumo e viu 3 caminhos.\n")
+        }
+        senao {
+          escreva("Opção inválida!\n")
+        }
+
+      } 
+    } 
+
+    senao se (tipo =="Feiticeiro" ou  tipo == "Híbrido"){
+    escreva("você é um feiticeiro de ", grau, ". \n")
+    }
+    senao {
+    escreva("você é um feiticeiro de ", grau, ". \n")
     }
   }
 }
