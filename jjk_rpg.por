@@ -21,8 +21,10 @@ programa
         inteiro chegadecadeias
         cadeia caminho
         cadeia genero
-       inteiro sortegenero
+        cadeia escolaescolhida
+        cadeia desgraca
 
+       inteiro sortegenero
         inteiro forca = 1
         inteiro velocidade = 1
         inteiro resistencia = 1
@@ -38,6 +40,7 @@ programa
         inteiro sortecla
         inteiro tecnicaHereditaria
         inteiro sortecolonia
+        inteiro sorteevento
         
 
         sortecla = u.sorteia(1,4)
@@ -252,6 +255,7 @@ senao {
             velocidade += 500
             resistencia += 500
             jujutsu += 500
+            escolaescolhida = "Tokyo"
 
         }
 
@@ -263,6 +267,7 @@ senao {
             velocidade -= 500
             resistencia -= 500
             jujutsu -= 500
+            escolaescolhida = "Kyoto"
 
         }
 
@@ -2493,6 +2498,15 @@ senao {
              jujutsu -=200
         }
          }
+         se (tipo == "Maldicao" ou tipo == "Hibrido" ou tipo == "Mestre de Maldição") {
+           forca = forca * 1.5
+           velocidade = velocidade * 1.5
+           resistencia = resistencia * 1.5
+           jujutsu = jujutsu * 1.5
+           energia = energia * 1.5
+
+         }
+
         se (forca < 0 ){
           forca = 0
         }
@@ -2763,6 +2777,13 @@ se (tipo == "Maldição" ou tipo == "Mestre de Maldição") {
           escreva("Você seguiu e encontrou mahito lutando com yuji itadori e aoi todo.\n")
           se (poderTotal >= 6000) {
             escreva("você ganhou e vocês derrotaram ambos\n")
+            escreva("porem vocês encotraram a yuki tsukumo.\n")
+          se (poderTotal >= 9000) {
+            escreva("você ganhou da bass da da\n")
+          }
+          senao {
+            escreva("você perdeu pra bass da da\n")
+          }
           } 
           senao {
             escreva("você perdeu, e o mahito foi exorcizado pelo uzumaki de kenjaku\n")
@@ -3031,7 +3052,7 @@ se (tipo == "Maldição" ou tipo == "Mestre de Maldição") {
               }
     } 
 
-    senao se (tipo =="Feiticeiro" ou  tipo == "Híbrido"){
+    senao se (tipo =="Feiticeiro" ou  tipo == "Híbrido" e escolaescolhida == "Tokyo"){
     escreva("você é um feiticeiro de ", grau, ". \n")
     escreva("Escolha seu destino\n")
       escreva("1-Shibuya\n")
@@ -3041,7 +3062,9 @@ se (tipo == "Maldição" ou tipo == "Mestre de Maldição") {
       escreva("5-Colônia de Sakurajima\n")
       escreva("6-Colônia Lake Gosho\n")
       escreva("7-Clã zenin\n")
-      escreva("escolha de 1 a 7 \n")
+      escreva("8-Evento de Intercâmbio da Escola-Irmã de Kyoto")
+      escreva("9-Shinjuku")
+      escreva("escolha de 1 a 9 \n")
       leia(destino)
 
       se (destino == "1") {
@@ -3335,12 +3358,137 @@ se (tipo == "Maldição" ou tipo == "Mestre de Maldição") {
             }
 
           }
+          senao se (destino == "8"){
+            escreva("vocẽ foi participar do Evento de Intercâmbio da Escola-Irmã de Kyoto e seu oponente é")
+            sorteevento = u.sorteia(1,6)
+        
+         escolha(sorteevento){
+          caso 1: 
+          escreva("aoi todo")
+          se (poderTotal >= 7000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 2: 
+          escreva("miwa")
+          se (poderTotal >= 2000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 3: 
+          escreva("mai")
+          se (poderTotal >= 2000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+           caso 4: 
+          escreva("momo")
+          se (poderTotal >= 2000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 5: 
+          escreva("mechamaru")
+          se (poderTotal >= 6000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 6: 
+          escreva("Arata Nitta")
+          se (poderTotal >= 2000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+        }
+        escreva("apos a batalha, algo...na verdade alguem aparece, um novo oponente")
+        desgraca = u. sorteia(1, 2)
+        escolha (desgraca){
+          caso 1: 
+          escreva("mahito")
+          se (poderTotal >= 5000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu e foi transfigurado\n")
+            tipo = "Humano Transfigurado"
+            forca = 100
+            velocidade = 0
+            resistencia = 0
+            jujutsu = 0
+            bonusFinal = 0
+            gastoEnergia = 0
+          }
+          pare
+          caso 2: 
+          escreva("Haruta")
+          se (poderTotal >= 4000) {
+            escreva("você ganhou e matou ele brutalmente (graças a Deus)\n")
+          } 
+          senao {
+            escreva("você perdeu, como?\n")
+          }
+          pare
+          caso 3: 
+          escreva("Hanami")
+          se (poderTotal >= 5000) {
+            escreva("você ganhou e matou ele brutalmente (graças a Deus)\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          
+
+        }
+
+          }
+
+          senao se (destino == "9"){
+            escreva("o sukuna se libertou, você vai ter de ir pra linha de frente")
+            se (poderTotal < 7000){
+              escreva("você ira enfrentar uraume")
+              se (poderTotal >= 6000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+
+            }
+            se (poderTotal < 7000){
+              escreva("você ira enfrentar sukuna")
+              se (poderTotal >= 11000) {
+            escreva("você ganhou e ficou conhecido entre os feiticeiros e ao mesmo tempo que amado, temido\n")
+          } 
+          senao {
+            escreva("você perdeu e foi so mais\n")
+          }
+            }
+          }
               senao {
           escreva("Opção inválida!\n")
               }
     }
     senao {
-    escreva("você é um simuriano, atiram nos seus então chega de acordos. \n")
+    escreva("você é um simuriano, atiraram nos seus, então chega de acordos. \n")
     escreva("o guerreiro mais forte irá enfrentar o humano mais forte, você terá de enfrentar Tsurugi Okkotsu\n")
           se (poderTotal >= 6000) {
                 escreva("você ganhou\n")
