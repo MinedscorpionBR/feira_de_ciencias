@@ -3487,6 +3487,441 @@ se (tipo == "Maldição" ou tipo == "Mestre de Maldição") {
           escreva("Opção inválida!\n")
               }
     }
+    senao se (tipo =="Feiticeiro" ou  tipo == "Híbrido" e escolaescolhida == "Kyoto"){
+    escreva("você é um feiticeiro de ", grau, ". \n")
+    escreva("Escolha seu destino\n")
+      escreva("1-Shibuya\n")
+      escreva("2-Tokyo Colônia Nº 1\n")
+      escreva("3-Tokyo Colônia Nº 2\n")
+      escreva("4-Colônia de Sendai\n")
+      escreva("5-Colônia de Sakurajima\n")
+      escreva("6-Colônia Lake Gosho\n")
+      escreva("7-Clã zenin\n")
+      escreva("8-Evento de Intercâmbio da Escola-Irmã de Tokyo")
+      escreva("9-Shinjuku")
+      escreva("escolha de 1 a 9 \n")
+      leia(destino)
+
+      se (destino == "1") {
+        escreva("escolha lugar para ir em shibuya\n")
+        escreva("1- metro\n")
+        escreva("2- Estação de Bunkamura\n")
+        escreva("3- Estação de Shibuya,Linha Inokashira\n")
+        escreva("4- Andar sem rumo\n")
+        escreva("5- Entrar num beco suspeito...\n")
+        escreva("escolha de 1 a 5\n")
+        leia(chegadecadeias)
+
+        se (chegadecadeias == "1") {
+          escreva("você encontrou jogo,hanami, kenjaku, mahito, chooso e dagon\n")
+          
+          se (poderTotal >= 9000) {
+            escreva("você ganhou e derrotou todo mundo, fim da historia de jjk\n")
+          } 
+          senao {
+            escreva("você perdeu, porem no ultimo segundo satoru gojo aparece.\n")
+            escreva("dessa vez você deu sorte\n")
+          }
+        } 
+        senao se (chegadecadeias == "2") {
+          escreva("você encontrou dagon\n")
+         se (poderTotal >= 8000) {
+            escreva("você ganhou e derrotou o feiticeiro mais forte\n")
+          } 
+          senao {
+            escreva("você perdeu, porem no ultimo segundo é salvo por um homem... sem energia? como é possivel?\n")
+            escreva("dessa vez você deu sorte\n")
+          }
+          escreva("você encontrou jogo\n")
+          se (poderTotal >= 9000) {
+            escreva("você ganhou e derrotou-o\n")
+          } 
+          senao {
+            escreva("você perdeu e foi carbonizado\n")
+          }
+        } 
+        senao se (chegadecadeias == "3") {
+          escreva("Você foi para a Linha Inokashira e deu de cara com haruta esfaqueando mulheres\n")
+           se (poderTotal >= 5000) {
+            escreva("você ganhou e derrotou o haruta\n")
+          } 
+          senao {
+            escreva("você perdeu e foi morto lentamente\n")
+          }
+        }
+        senao se (chegadecadeias == "4") {
+          escreva("Você andou sem rumo e viu 3 caminhos.\n")
+          escreva("Esquerda,Direita e Reto.\n")
+          escreva("Escolha um deles em letras minusculas.\n")
+          leia(caminho)
+          se (caminho =="esquerda"){
+          escreva("Você seguiu e encontrou mahito lutando com yuji itadori e aoi todo.\n")
+          se (poderTotal >= 5000) {
+            escreva("você ganhou e vocês derrotaram o mahito\n")
+          } 
+          senao {
+            escreva("você perdeu, porem o mahito foi exorcizado pelo uzumaki de kenjaku\n")
+            escreva("você deu sorte\n")
+          }
+          }
+          se (caminho =="direita"){
+          escreva("Você seguiu e encontrou sukuna lutando com jogo,.\n")
+          se (poderTotal >= 9000) {
+            escreva("você ganhou dos 2\n")
+          } 
+          senao {
+            escreva("você perdeu, foi carbonizado\n")
+          }
+          }
+          se (caminho =="reto"){
+          escreva("Você seguiu e encontrou o mahoraga.\n")
+          se (poderTotal >= 9000) {
+            escreva("você ganhou do mahoraga\n")
+          } 
+          senao {
+            escreva("você perdeu e morreu\n")
+          }
+          }
+        }
+        senao se (chegadecadeias == "5") {
+          escreva("Você seguiu para o beco e encontrou um homem com zero energia amaldiçoada?.\n")
+          se (poderTotal >= 9000) {
+            escreva("você ganhou do homem misterioso, porem ao ver seu corpo... ele havia mudado.. o que ta acotecendo em shibuya?\n")
+          } 
+          senao {
+            escreva("você perdeu e morreu\n")
+          }
+        }
+        senao {
+          escreva("Opção inválida!\n")
+        }
+      } 
+      senao se (destino == "2"){
+        sortecolonia = u. sorteia(1, 5)
+        escolha (sortecolonia){
+          caso 1:
+           escreva("você spawnou em um lugar random e encontrou Reggie Star\n")
+           se (poderTotal >= 5000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 2:
+           escreva("você spawnou em um lugar random e encontrou a Remi\n")
+           se (poderTotal >= 4000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu... inutil do caramba\n")
+          }
+          pare
+           caso 3:
+           escreva("você spawnou em um lugar random e encontrou Iori Hazenoki\n")
+           se (poderTotal >= 4000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu... inutil do caramba\n")
+          }
+          pare
+          caso 4:
+           escreva("você spawnou em um lugar random e encontrou Rin Amai\n")
+           se (poderTotal >= 500) {
+            escreva("você ganhou, meio obvio\n")
+          } 
+          senao {
+            escreva("você perdeu... caramba, inutil do caramba\n")
+          }
+          pare
+          caso 5:
+           escreva("você spawnou em um lugar random e encontrou Hiromi Higuruma\n")
+           se (poderTotal >= 6000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare 
+         }
+
+      }
+      senao se (destino == "3"){
+        sortecolonia = u. sorteia(1, 2)
+        escolha (sortecolonia){
+          caso 1:
+           escreva("você spawnou em um lugar random e encontrou Hajime Kashimo\n")
+           se (poderTotal >= 7000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu ele estourou sua cabeça com eletricidade\n")
+          }
+          pare
+          caso 2:
+           escreva("você spawnou em um lugar random e encontrou Charles Bernard\n")
+           se (poderTotal >= 6000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+         }
+
+      }
+      senao se (destino == "4"){
+        sortecolonia = u. sorteia(1, 4)
+        escolha (sortecolonia){
+          caso 1:
+          escreva("você caiu em do ceu e encontrou Ryu Ishigori\n")
+           se (poderTotal >= 9000) {
+            escreva("você ganhou e ele falou:'obrigado, estou cheio'\n")
+          } 
+          senao {
+            escreva("você perdeu,ele ainda está com fome\n")
+          }
+          pare
+          caso 2:
+           escreva("você spawnou em um lugar random e encontrou Takako Uro\n")
+           se (poderTotal >= 7000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu e ela ficou reclamando do passado triste dela\n")
+          }
+          pare
+          caso 3:
+           escreva("você spawnou em um lugar random e encontrou Kurourushi\n")
+           se (poderTotal >= 5000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu... inutil do kct\n")
+          }
+          pare
+         }
+
+      }
+      senao se (destino == "5"){
+            escreva("na entrada da barreira você encontrou Naoya, uma maldição\n")
+            se (poderTotal >= 6000) {
+                escreva("você ganhou\n")
+            } senao {
+                escreva("você perdeu\n")
+            }
+           }
+          senao se (destino == "6"){
+            escreva("AO entrar na colonia você encontrou kenjaku\n")
+            se (poderTotal >= 9000) {
+                escreva("você ganhou\n")
+            } senao {
+              se (tipo== "Maldição"){
+                 escreva("você perdeu e foi absolvido pelo uzumaki\n")
+              }
+              senao{
+                escreva("você perdeu e foi executado\n")
+              }
+            }
+          }
+
+          senao se (destino == "7"){
+            se (nivelEnergia == "Maki sem despertar" e genero == "feminino" e cla == "Zenin"){
+               escreva("você encontrou Ogi Zenin\n")
+               escreva("você perdeu\n")
+                escreva("Ogi:'sabe por que eu não sou o lider do clã zenin? por causa das minhas filhas'\n")
+                escreva("Ogi joga vocês feridas no porão de treinamento e punição do Clã Zenin'\n")
+                escreva("Mai:'sabe por que a gente não evolui? porque somos gemeas... eu vou indo com a energia amaldiçoada, mas acaba com tudo,irmãzinha'\n")
+                 energia = energia * 0
+                forca += 600
+                velocidade += 60
+                resistencia += 400
+                gastoEnergia = 0
+                escreva("Força, Velocidade e Resistencia aumentaram, CE e gasto de CE diminuiram para 0'\n")
+              escreva("você reencontrou Ogi Zenin\n")
+              escreva("você ganhou\n")
+              escreva("o exercito do clã zenin veio pra cima\n")
+              escreva("você ganhou\n")
+              escreva("você encontrou jinichi\n")
+              escreva("você ganhou\n")
+              escreva("você encontrou naoya\n")
+              escreva("noaya:'você não tem coração não, menina?\n")
+              se (poderTotal >= 7000) {
+            escreva("você ganhou, o clã zenin foi brutalmente assasinado\n")
+          } 
+          senao {
+            escreva("você perdeu foi executado brutalmente\n")
+          }
+            }
+            senao {
+              sortecolonia = u. sorteia(1, 4)
+        escolha (sortecolonia){
+          caso 1: 
+              escreva("você encontrou naoya\n")
+              se (poderTotal >= 7000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu foi executado brutalmente\n")
+          }
+            caso 2: 
+              escreva("você encontrou jinichi\n")
+              se (poderTotal >= 6500) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu foi executado brutalmente\n")
+          }
+          caso 3: 
+              escreva("você encontrou ogi\n")
+              se (poderTotal >= 6000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          caso 4: 
+              escreva("você encontrou Naobito\n")
+              se (poderTotal >= 6900) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+        }
+            }
+
+          }
+          senao se (destino == "8"){
+            escreva("vocẽ foi participar do Evento de Intercâmbio da Escola-Irmã de Tokyo e seu oponente é")
+            sorteevento = u.sorteia(1,6)
+        
+         escolha(sorteevento){
+          caso 1: 
+          escreva("yuji itadori")
+          se (poderTotal >= 4000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 2: 
+          escreva("nobara")
+          se (poderTotal >= 3000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 3: 
+          escreva("maki")
+          se (poderTotal >= 5000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+           caso 4: 
+          escreva("inumaki")
+          se (poderTotal >= 4000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 5: 
+          escreva("Panda")
+          se (poderTotal >= 2000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          caso 6: 
+          escreva("Megumi")
+          se (poderTotal >= 2000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+        }
+        escreva("apos a batalha, algo...na verdade alguem aparece, um novo oponente")
+        desgraca = u. sorteia(1, 2)
+        escolha (desgraca){
+          caso 1: 
+          escreva("mahito")
+          se (poderTotal >= 5000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu e foi transfigurado\n")
+            tipo = "Humano Transfigurado"
+            forca = 100
+            velocidade = 0
+            resistencia = 0
+            jujutsu = 0
+            bonusFinal = 0
+            gastoEnergia = 0
+          }
+          pare
+          caso 2: 
+          escreva("Haruta")
+          se (poderTotal >= 4000) {
+            escreva("você ganhou e matou ele brutalmente (graças a Deus)\n")
+          } 
+          senao {
+            escreva("você perdeu, como?\n")
+          }
+          pare
+          caso 3: 
+          escreva("Hanami")
+          se (poderTotal >= 5000) {
+            escreva("você ganhou e matou ele brutalmente (graças a Deus)\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+          pare
+          
+
+        }
+
+          }
+
+          senao se (destino == "9"){
+            escreva("o sukuna se libertou, você vai ter de ir pra linha de frente")
+            se (poderTotal < 7000){
+              escreva("você ira enfrentar uraume")
+              se (poderTotal >= 6000) {
+            escreva("você ganhou\n")
+          } 
+          senao {
+            escreva("você perdeu\n")
+          }
+
+            }
+            se (poderTotal < 7000){
+              escreva("você ira enfrentar sukuna")
+              se (poderTotal >= 11000) {
+            escreva("você ganhou e ficou conhecido entre os feiticeiros e ao mesmo tempo que amado, temido\n")
+          } 
+          senao {
+            escreva("você perdeu e foi so mais\n")
+          }
+            }
+          }
+              senao {
+          escreva("Opção inválida!\n")
+              }
+    }
     senao {
     escreva("você é um simuriano, atiraram nos seus, então chega de acordos. \n")
     escreva("o guerreiro mais forte irá enfrentar o humano mais forte, você terá de enfrentar Tsurugi Okkotsu\n")
