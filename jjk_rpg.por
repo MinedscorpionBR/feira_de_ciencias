@@ -2655,31 +2655,31 @@ senao se (sorteioReencarnacao == 10)
         
 se (tipo == "Maldicao") {
       se(poderTotal >= 5000){
-        escreva("Maldição de Grau Especial 💀\n")
+        escreva("Maldição/mestre de maldição de Grau Especial 💀\n")
         grau = "Grau especial"
       }
       senao se(poderTotal >= 4000){
-        escreva("Maldição de Nível Semi-Especial 😈\n")
+        escreva("Maldição/mestre de maldição de Nível Semi-Especial 😈\n")
         grau = "Grau semi-especial"
       }
       senao se(poderTotal >= 3000){
-        escreva("Maldição de Grau 1 🔥\n")
+        escreva("Maldição/mestre de maldição de Grau 1 🔥\n")
         grau = "Grau 1"
       }
       senao se(poderTotal >= 2000){
-        escreva("Maldição de Semi-Primeiro Nível ⚔️\n")
+        escreva("Maldição/mestre de maldição de Semi-Primeiro Nível ⚔️\n")
         grau = "Semi primeiro nivel"
       }
       senao se(poderTotal >= 1000){
-        escreva("Maldição de Grau 2 ⚔️\n")
+        escreva("Maldição/mestre de maldição de Grau 2 ⚔️\n")
         grau = "Grau 2"
       }
       senao se(poderTotal >= 500){
-        escreva("Maldição de Grau 3 ⚔️\n")
+        escreva("Maldição/mestre de maldição de Grau 3 ⚔️\n")
         grau = "Grau 3"
       }
       senao {
-        escreva("Maldição de Grau 4 ☠️\n")
+        escreva("Maldição/mestre de maldição de Grau 4 ☠️\n")
         grau = "Grau 4"
       }
 
@@ -2690,7 +2690,7 @@ se (tipo == "Maldicao") {
         grau = "Grau especial"
       }
       senao se(poderTotal >= 6000){
-        escreva("É de nível semi especial 😈\n")
+        escreva("Nível semi especial 😈\n")
         grau = "Grau semi-especial"
       }
       senao se(poderTotal >= 5000){
