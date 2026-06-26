@@ -3924,7 +3924,7 @@ se (tipo == "Maldição" ou tipo == "Mestre de Maldição") {
     }
     senao {
     escreva("você é um simuriano, atiraram nos seus, então chega de acordos. \n")
-    escreva("o guerreiro mais forte irá enfrentar o humano mais forte, você terá de enfrentar Tsurugi Okkotsu\n")
+    escreva("o guerreiro mais forte irá enfrentar a humana mais forte, você terá de enfrentar Tsurugi Okkotsu\n")
           se (poderTotal >= 6000) {
                 escreva("você ganhou\n")
                 }
